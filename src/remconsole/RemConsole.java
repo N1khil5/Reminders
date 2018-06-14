@@ -28,6 +28,7 @@ public class RemConsole {
     public static void main(String[] args) {
         // TODO code application logic here
         try {
+            DriverManager.registerDriver(new org.apache.derby.jdbc.EmbeddedDriver());
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Reminder", "username", "password");
             Statement statement = con.createStatement();
             System.out.println("Would you like to:");
